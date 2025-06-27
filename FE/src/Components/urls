@@ -1,0 +1,15 @@
+urlpatterns = [
+    path('api/', views.index, name="home"),
+    path('api/login/', views.loginuser, name="login"),
+    path('api/logout/', views.logoutuser, name="logout"),
+    path('api/signup/', views.usersignup, name="signup"),
+
+    path('api/add-customer/', views.InsertCus, name='InsertCus'),
+    path('api/customers/', views.showcust, name='showCus'),
+    path('api/delete-customer', views.delete_customer, name='delete_customer'),
+    path('api/update-customer', views.update_customer, name='update_customer'),
+
+    path('protected/', ProtectedView.as_view()),
+
+    # Optional: password reset views can be added later as API endpoints
+]
